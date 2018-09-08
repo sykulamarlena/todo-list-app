@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Todo List Application",
+    "todo": {
+      "content": "Todo content",
+      "status": "Status",
+      "actions": "Actions",
+      "addTodo": "Add Todo item",
+      "editTodo": "Edit Todo item",
+      "removeTodo": "Remove Todo item",
+      "chooseStatus": "Choose status",
+      "all": "All",
+      "completed": "Completed",
+      "incompleted": "Incompleted"
+    }
+  },
+  "SHOW_ALL": "All",
+  "SHOW_COMPLETED": "Completed",
+  "SHOW_INCOMPLETED": "Incompleted"
+}
