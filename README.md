@@ -34,4 +34,4 @@ To build application run:
     
 To run tests:
     
-    npm test
+    npm test or yarn test

@@ -56,7 +56,14 @@ class TodoItemsListWithFilters extends Component {
 
     handleFilterStatus(event) {
         this.props.setTodoStatusFilter(event.target.value);
-        this.setState({selectedStatus: event.target.value, showFilteredResult: false, title: '', content: ''});
+
+        this.setState({
+                selectedStatus: event.target.value,
+                showFilteredResult: false,
+                title: '',
+                content: ''
+            }
+        );
     }
 
     getStatuses() {
@@ -72,7 +79,14 @@ class TodoItemsListWithFilters extends Component {
 
         const snackbar = {...this.state.snackbar};
         snackbar.showMessage = counterpart('app.snackbar.itemStatusChangedSuccess');
-        this.setState({snackbar: snackbar, showFilteredResult: false, title: '', content: ''});
+
+        this.setState({
+                snackbar: snackbar,
+                showFilteredResult: false,
+                title: '',
+                content: ''
+            }
+        );
     };
 
     openItemModal = (item) => this.setState({itemModalOpen: true, selectedItem: item});
@@ -88,6 +102,7 @@ class TodoItemsListWithFilters extends Component {
         }
 
         this.props.setTodoStatusFilter(constants.SHOW_ALL);
+
         this.setState({
             snackbar: snackbar,
             itemModalOpen: false,
@@ -100,11 +115,13 @@ class TodoItemsListWithFilters extends Component {
 
     handleRemoveItem = () => {
         this.closeModal();
+
         const selectedId = this.state.modal.selectedId;
         this.props.removeTodoItem(selectedId);
 
         const snackbar = {...this.state.snackbar};
         snackbar.showMessage = counterpart('app.snackbar.itemDeletedSuccess');
+
         this.setState({snackbar: snackbar});
     };
 
@@ -113,18 +130,21 @@ class TodoItemsListWithFilters extends Component {
         modal.open = true;
         modal.selectedId = id;
         modal.content = counterpart('app.modal.removeItem');
+
         this.setState({modal: modal});
     };
 
     closeSnackbar = () => {
         const snackbar = {...this.state.snackbar};
         snackbar.showMessage = false;
+
         this.setState({snackbar: snackbar});
     };
 
     closeModal = () => {
         const modal = {...this.state.modal};
         modal.open = false;
+
         this.setState({modal: modal});
     };
 
@@ -138,30 +158,30 @@ class TodoItemsListWithFilters extends Component {
 
                     <Toolbar className={css.toolbar}>
                         <Button variant="contained" color="secondary" onClick={this.openItemModal}>
-                            <PlusIcon />
+                            <PlusIcon/>
                             {counterpart('app.todo.addTodo')}
                         </Button>
                     </Toolbar>
 
                     <div className={css.tableWrapper}>
-                    <Table>
-                        <TodoItemsListHead
-                            selectedTitle={this.state.title}
-                            selectedContent={this.state.content}
-                            handleFilter={this.handleFilter}
-                            statuses={this.getStatuses()}
-                            selectedStatus={this.state.selectedStatus}
-                            handleFilterStatus={this.handleFilterStatus}
-                        />
+                        <Table>
+                            <TodoItemsListHead
+                                selectedTitle={this.state.title}
+                                selectedContent={this.state.content}
+                                handleFilter={this.handleFilter}
+                                statuses={this.getStatuses()}
+                                selectedStatus={this.state.selectedStatus}
+                                handleFilterStatus={this.handleFilterStatus}
+                            />
 
-                        <TodoItemsListBody
-                            todoItems={items}
-                            emptyRows={emptyRows}
-                            editStatusTodoItem={this.handleChangeStatus}
-                            editTodoItem={this.openItemModal}
-                            removeTodoItem={this.openRemoveModal}
-                        />
-                    </Table>
+                            <TodoItemsListBody
+                                todoItems={items}
+                                emptyRows={emptyRows}
+                                editStatusTodoItem={this.handleChangeStatus}
+                                editTodoItem={this.openItemModal}
+                                removeTodoItem={this.openRemoveModal}
+                            />
+                        </Table>
                     </div>
                 </Paper>
 
@@ -212,7 +232,7 @@ const getFilteredTodos = (todoItems, filter) => {
         case constants.SHOW_INCOMPLETED:
             return todoItems.filter(t => !t.completed);
         default:
-            throw new Error("Unknown filter: " + filter);
+            return todoItems;
     }
 };
 

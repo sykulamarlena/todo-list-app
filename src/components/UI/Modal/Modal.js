@@ -13,17 +13,23 @@ const Modal = ({open, onClose, onApproval, title, content, cancelText, submitTex
         open={open}
         onClose={onClose}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description">
-        <DialogTitle id="alert-dialog-title"> {title || counterpart('app.modal.title')}</DialogTitle>
+        aria-describedby="alert-dialog-description"
+    >
+        <DialogTitle id="alert-dialog-title">
+            {title || counterpart('app.modal.title')}
+        </DialogTitle>
+
         <DialogContent>
             <DialogContentText id="alert-dialog-description">
                 {content}
             </DialogContentText>
         </DialogContent>
+
         <DialogActions>
             <Button onClick={onClose} color="primary">
                 {cancelText || counterpart('app.modal.cancelText')}
             </Button>
+
             <Button onClick={onApproval} color="secondary">
                 {submitText || counterpart('app.modal.submitText')}
             </Button>

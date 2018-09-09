@@ -16,7 +16,7 @@ class CustomSelect extends Component {
                     <Select
                         id={this.props.id}
                         name={this.props.name}
-                        value={this.props.value }
+                        value={this.props.value}
                         className={this.props.className}
                         onChange={this.props.onChange}
                     >

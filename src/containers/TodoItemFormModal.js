@@ -28,6 +28,7 @@ class TodoItemFormModal extends Component {
     handleChangeTodoText = prop => (event) => {
         const item = {...this.state.item};
         item[prop] = event.target.value;
+
         this.setState({item});
     };
 
@@ -44,6 +45,7 @@ class TodoItemFormModal extends Component {
         this.props.createTodoItem(item);
         item.title = '';
         item.content = '';
+
         this.setState({item});
         this.props.onSubmit(false);
     };
@@ -53,6 +55,7 @@ class TodoItemFormModal extends Component {
         this.props.editTodoItem(this.props.item.id, item);
         item.title = '';
         item.content = '';
+
         this.setState({item});
         this.props.onSubmit(true);
     };

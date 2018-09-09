@@ -6,7 +6,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TextField from '@material-ui/core/TextField';
 import CustomSelect from '../UI/CustomSelect/CustomSelect';
-import css from '../../styles/globalStyles.scss';
 
 const TodoItemsListHead = ({selectedTitle, selectedContent, handleFilter, statuses, selectedStatus, handleFilterStatus}) => (
     <TableHead>
@@ -21,7 +20,7 @@ const TodoItemsListHead = ({selectedTitle, selectedContent, handleFilter, status
                     type='search'
                     onChange={handleFilter('title')}
                     value={selectedTitle}
-                    className={css.textFieldRoot}
+                    style={{display: 'block', marginBottom: '5px'}}
                 />
             </TableCell>
 
@@ -35,7 +34,7 @@ const TodoItemsListHead = ({selectedTitle, selectedContent, handleFilter, status
                     type='search'
                     onChange={handleFilter('content')}
                     value={selectedContent}
-                    className={css.textFieldRoot}
+                    style={{display: 'block', marginBottom: '5px'}}
                 />
             </TableCell>
 
@@ -50,7 +49,7 @@ const TodoItemsListHead = ({selectedTitle, selectedContent, handleFilter, status
                     options={statuses}
                     onChange={(e) => handleFilterStatus(e)}
                     value={selectedStatus}
-                    className={css.textFieldRoot}
+                    style={{display: 'block', marginBottom: '5px'}}
                 />
 
             </TableCell>
