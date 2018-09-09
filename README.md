@@ -13,13 +13,24 @@ Todo item contain:
 - status.
 
 ## Development
+To run application in development mode (application is available on: localhost:3000):
 
-To run appliation in development mode (application is available on: localhost:3000):
+1) Install dependencies:
 
-	npm start
+        npm install or yarn install
+        
+2) Start server:
+
+	    npm start or yarn start
 	
-## Test production
+## Production
 
 To build application run:
 
-	npm run build
+	npm run build or yarn build
+	
+## Tests
+    
+To run tests:
+    
+    npm test
