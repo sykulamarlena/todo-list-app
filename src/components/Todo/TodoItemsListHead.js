@@ -54,9 +54,7 @@ const TodoItemsListHead = ({selectedTitle, selectedContent, handleFilter, status
                 />
 
             </TableCell>
-            <TableCell key='actions' padding={"default"}>
-                {counterpart('app.todo.actions')}
-            </TableCell>
+            <TableCell key='actions' padding={"default"} numeric={true}/>
         </TableRow>
     </TableHead>
 );

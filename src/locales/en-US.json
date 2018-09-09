@@ -5,14 +5,14 @@
       "title": "Title",
       "content": "Description",
       "status": "Item Status",
-      "actions": "Actions",
       "addTodo": "Add Todo Item",
       "editTodo": "Edit todo Item",
       "all": "All",
       "completed": "Completed",
       "incompleted": "Incompleted",
       "save": "Save",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "noResult": "There are no items."
     },
     "snackbar": {
       "itemAddedSuccess": "Item has been added!",

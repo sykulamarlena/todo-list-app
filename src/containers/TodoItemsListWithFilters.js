@@ -56,7 +56,7 @@ class TodoItemsListWithFilters extends Component {
 
     handleFilterStatus(event) {
         this.props.setTodoStatusFilter(event.target.value);
-        this.setState({selectedStatus: event.target.value, showFilteredResult: false, selectedName: ''});
+        this.setState({selectedStatus: event.target.value, showFilteredResult: false, title: '', content: ''});
     }
 
     getStatuses() {
@@ -72,7 +72,7 @@ class TodoItemsListWithFilters extends Component {
 
         const snackbar = {...this.state.snackbar};
         snackbar.showMessage = counterpart('app.snackbar.itemStatusChangedSuccess');
-        this.setState({snackbar: snackbar, showFilteredResult: false, selectedName: ''});
+        this.setState({snackbar: snackbar, showFilteredResult: false, title: '', content: ''});
     };
 
     openItemModal = (item) => this.setState({itemModalOpen: true, selectedItem: item});
@@ -92,7 +92,8 @@ class TodoItemsListWithFilters extends Component {
             snackbar: snackbar,
             itemModalOpen: false,
             showFilteredResult: false,
-            selectedName: '',
+            title: '',
+            content: '',
             selectedStatus: '',
         })
     };

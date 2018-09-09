@@ -2,10 +2,11 @@
 
 ## Features:
 1. Ability to add, edit and remove todo item.
-2. Ability to mark todo item as completed.
-3. Ability to list all todo items.
-4. Ability to search through todo item title and description.
-5. Ability to filter todo item by status (all, completed, incompleted).
+2. Added todo item should have not empty title.
+3. Ability to mark todo item as completed.
+4. Ability to list all todo items.
+5. Ability to search through todo item title and description.
+6. Ability to filter todo item by status (all, completed, incompleted).
 
 Todo item contain:
 - title,

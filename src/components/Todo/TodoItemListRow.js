@@ -27,7 +27,7 @@ const TodoItemListRow = ({todo, editStatusTodoItem, editTodoItem, removeTodoItem
             </Tooltip>
         </TableCell>
 
-        <TableCell padding={'default'}>
+        <TableCell padding={'default'} numeric={true}>
             <Button color="primary" aria-label="Edit" onClick={editTodoItem}>
                 <CreateIcon/>
             </Button>
