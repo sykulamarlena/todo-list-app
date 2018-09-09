@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TodoItemListRow from './TodoItemListRow';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import TodoItemListRow from './TodoItemListRow';
 
-const TodoItemsList = ({ todoItems, emptyRows, editStatusTodoItem, editNameTodoItem, removeTodoItem }) => (
+const TodoItemsListBody = ({todoItems, emptyRows, editStatusTodoItem, editTodoItem, removeTodoItem}) => (
     <TableBody>
         {todoItems.map(todo =>
             <TodoItemListRow
@@ -13,28 +13,29 @@ const TodoItemsList = ({ todoItems, emptyRows, editStatusTodoItem, editNameTodoI
                 todo={todo}
                 editStatusTodoItem={() => editStatusTodoItem(todo.id)}
                 removeTodoItem={() => removeTodoItem(todo.id)}
-                editNameTodoItem={() => editNameTodoItem(todo.id)}
+                editTodoItem={() => editTodoItem(todo)}
             />
         )}
 
         {emptyRows && (
             <TableRow>
-                <TableCell colSpan={6}>There are no items.</TableCell>
+                <TableCell colSpan={6} style={{textAlign: 'center'}}>There are no items.</TableCell>
             </TableRow>
         )}
     </TableBody>
 );
 
-TodoItemsList.propTypes = {
+TodoItemsListBody.propTypes = {
     todoItems: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         completed: PropTypes.bool.isRequired,
-        text: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired
     }).isRequired).isRequired,
     emptyRows: PropTypes.bool.isRequired,
     editStatusTodoItem: PropTypes.func.isRequired,
-    editNameTodoItem: PropTypes.func.isRequired,
+    editTodoItem: PropTypes.func.isRequired,
     removeTodoItem: PropTypes.func.isRequired
 };
 
-export default TodoItemsList
+export default TodoItemsListBody

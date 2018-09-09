@@ -2,16 +2,30 @@
   "app": {
     "title": "Todo List Application",
     "todo": {
-      "content": "Todo content",
-      "status": "Status",
+      "title": "Title",
+      "content": "Description",
+      "status": "Item Status",
       "actions": "Actions",
-      "addTodo": "Add Todo item",
-      "editTodo": "Edit Todo item",
-      "removeTodo": "Remove Todo item",
-      "chooseStatus": "Choose status",
+      "addTodo": "Add Todo Item",
+      "editTodo": "Edit todo Item",
       "all": "All",
       "completed": "Completed",
-      "incompleted": "Incompleted"
+      "incompleted": "Incompleted",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "snackbar": {
+      "itemAddedSuccess": "Item has been added!",
+      "itemEditedSuccess": "Item has been edited!",
+      "itemStatusChangedSuccess": "Item status has been changed.",
+      "itemDeletedSuccess": "Item has been deleted."
+    },
+    "modal": {
+      "title": "Confirmation",
+      "editItem": "This actions will edit todo item. Are you sure?",
+      "removeItem": "This actions will remove todo item. Are you sure?",
+      "cancelText": "No, cancel.",
+      "submitText": "Yes, I am sure."
     }
   },
   "SHOW_ALL": "All",

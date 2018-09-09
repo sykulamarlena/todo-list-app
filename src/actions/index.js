@@ -2,10 +2,10 @@ import constants from '../constants/actionsConstants';
 
 let nextTodoId = 1;
 
-export const createTodoItem = (text) => ({
+export const createTodoItem = (item) => ({
     type: constants.CREATE_TODO_ITEM,
     id: nextTodoId++,
-    text
+    item
 });
 
 export const editStatusTodoItem = (id) => ({
@@ -13,10 +13,10 @@ export const editStatusTodoItem = (id) => ({
     id
 });
 
-export const editNameTodoItem = (id, text) => ({
-    type: constants.EDIT_NAME_TODO_ITEM,
+export const editTodoItem = (id, item) => ({
+    type: constants.EDIT_TODO_ITEM,
     id,
-    text
+    item
 });
 
 export const removeTodoItem = (id) => ({
@@ -26,10 +26,5 @@ export const removeTodoItem = (id) => ({
 
 export const setTodoStatusFilter = (filter) => ({
     type: constants.SET_TODO_STATUS_FILTER,
-    filter
-});
-
-export const setTodoNameFilter = (filter) => ({
-    type: constants.SET_TODO_NAME_FILTER,
     filter
 });

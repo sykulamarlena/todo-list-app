@@ -7,7 +7,8 @@ const todoReducer = (state = [], action) => {
                 ...state,
                 {
                     id: action.id,
-                    text: action.text,
+                    title: action.item.title,
+                    content: action.item.content,
                     completed: false
                 }
             ];
@@ -17,10 +18,10 @@ const todoReducer = (state = [], action) => {
                     ? {...todo, completed: !todo.completed}
                     : todo
             );
-        case constants.EDIT_NAME_TODO_ITEM:
+        case constants.EDIT_TODO_ITEM:
             return state.map(todo =>
                 (todo.id === action.id)
-                    ? {...todo, text: action.text}
+                    ? {...todo, title: action.item.title, content: action.item.content}
                     : todo
             );
         case constants.REMOVE_TODO_ITEM:
