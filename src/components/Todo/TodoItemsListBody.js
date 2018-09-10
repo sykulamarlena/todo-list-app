@@ -27,12 +27,7 @@ const TodoItemsListBody = ({todoItems, emptyRows, editStatusTodoItem, editTodoIt
 );
 
 TodoItemsListBody.propTypes = {
-    todoItems: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        completed: PropTypes.bool.isRequired,
-        title: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired
-    }).isRequired).isRequired,
+    todoItems: PropTypes.array.isRequired,
     emptyRows: PropTypes.bool.isRequired,
     editStatusTodoItem: PropTypes.func.isRequired,
     editTodoItem: PropTypes.func.isRequired,

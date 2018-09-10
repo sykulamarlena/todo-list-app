@@ -8,15 +8,14 @@ import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
 import CreateIcon from '@material-ui/icons/Create';
 import DeleteIcon from '@material-ui/icons/Delete';
-import css from '../../styles/globalStyles.scss';
 
 const TodoItemListRow = ({todo, editStatusTodoItem, editTodoItem, removeTodoItem}) => (
     <TableRow key={todo.id}>
-        <TableCell padding={'default'} className={css.wrappedCell}>
+        <TableCell padding={'default'} className="wrappedCell">
             {todo.title}
         </TableCell>
 
-        <TableCell padding={'default'} className={css.wrappedCell}>
+        <TableCell padding={'default'} className="wrappedCell">
             {todo.content}
         </TableCell>
 

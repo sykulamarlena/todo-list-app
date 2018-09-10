@@ -1,0 +1,80 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.paperRoot {
+    width: 70%;
+    margin: 10px 15%;
+    min-height: 500px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tableWrapper {
+    overflow: auto;
+    position: relative;
+    padding: 0 25px;
+}
+
+.wrappedCell {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.modalContent {
+    flex-direction: column;
+    display: flex;
+    width: 550px;
+}
+
+.groupButton {
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.customInput {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.customButton {
+    margin-top: 10px;
+    width: 25%;
+}
+
+@media (max-width: 700px) {
+    .modalContent {
+        width: 400px;
+    }
+
+    .customInput {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .modalContent {
+        width: 300px;
+    }
+}
+
+@media (max-width: 430px) {
+    .modalContent {
+        width: 280px;
+    }
+}
+
+@media (max-width: 350px) {
+    .modalContent {
+        width: 200px;
+    }
+}

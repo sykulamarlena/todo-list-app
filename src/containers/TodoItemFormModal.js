@@ -8,7 +8,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Modal from "../components/UI/Modal/Modal";
 import TextField from '@material-ui/core/TextField';
 import {createTodoItem, editTodoItem} from '../actions';
-import css from '../styles/globalStyles.scss';
 
 class TodoItemFormModal extends Component {
     constructor(props) {
@@ -75,12 +74,12 @@ class TodoItemFormModal extends Component {
                 </DialogTitle>
 
                 <DialogContent>
-                    <div className={css.modalContent}>
+                    <div className="modalContent">
                         <TextField
                             id="title"
                             name="title"
                             label={counterpart('app.todo.title')}
-                            className={css.customInput}
+                            className="customInput"
                             value={this.state.item.title}
                             onChange={this.handleChangeTodoText('title')}
                             margin="normal"
@@ -90,7 +89,7 @@ class TodoItemFormModal extends Component {
                             id="content"
                             name="content"
                             label={counterpart('app.todo.content')}
-                            className={css.customInput}
+                            className="customInput"
                             value={this.state.item.content}
                             onChange={this.handleChangeTodoText('content')}
                             margin="normal"
@@ -98,9 +97,9 @@ class TodoItemFormModal extends Component {
                             rowsMax="4"
                         />
 
-                        <div className={css.groupButton}>
+                        <div className="groupButton">
                             <Button
-                                className={css.customButton}
+                                className="customButton"
                                 color="primary"
                                 onClick={this.props.onClose}
                             >
@@ -108,7 +107,7 @@ class TodoItemFormModal extends Component {
                             </Button>
 
                             <Button
-                                className={css.customButton}
+                                className="customButton"
                                 color="secondary"
                                 disabled={this.state.item.title === ''}
                                 onClick={this.handleTodoItem}

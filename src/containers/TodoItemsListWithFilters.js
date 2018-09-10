@@ -16,7 +16,6 @@ import TodoItemsListBody from '../components/Todo/TodoItemsListBody'
 import TodoItemFormModal from './TodoItemFormModal';
 import Modal from "../components/UI/Modal/Modal";
 import CustomSnackbarContent from "../components/UI/SnackbarWrapper/SnackbarWrapper";
-import css from '../styles/globalStyles.scss';
 
 class TodoItemsListWithFilters extends Component {
     constructor(props) {
@@ -57,13 +56,7 @@ class TodoItemsListWithFilters extends Component {
     handleFilterStatus(event) {
         this.props.setTodoStatusFilter(event.target.value);
 
-        this.setState({
-                selectedStatus: event.target.value,
-                showFilteredResult: false,
-                title: '',
-                content: ''
-            }
-        );
+        this.setState({selectedStatus: event.target.value, showFilteredResult: false, title: '', content: ''});
     }
 
     getStatuses() {
@@ -80,13 +73,7 @@ class TodoItemsListWithFilters extends Component {
         const snackbar = {...this.state.snackbar};
         snackbar.showMessage = counterpart('app.snackbar.itemStatusChangedSuccess');
 
-        this.setState({
-                snackbar: snackbar,
-                showFilteredResult: false,
-                title: '',
-                content: ''
-            }
-        );
+        this.setState({snackbar: snackbar, showFilteredResult: false, title: '', content: ''});
     };
 
     openItemModal = (item) => this.setState({itemModalOpen: true, selectedItem: item});
@@ -154,16 +141,16 @@ class TodoItemsListWithFilters extends Component {
 
         return (
             <React.Fragment>
-                <Paper className={css.paperRoot}>
+                <Paper className="paperRoot">
 
-                    <Toolbar className={css.toolbar}>
+                    <Toolbar className="toolbar">
                         <Button variant="contained" color="secondary" onClick={this.openItemModal}>
                             <PlusIcon/>
                             {counterpart('app.todo.addTodo')}
                         </Button>
                     </Toolbar>
 
-                    <div className={css.tableWrapper}>
+                    <div className="tableWrapper">
                         <Table>
                             <TodoItemsListHead
                                 selectedTitle={this.state.title}

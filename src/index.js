@@ -7,7 +7,7 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers'
 import theme from './styles/theme'
-import './styles/globalStyles.scss';
+import './styles/globalStyles.css';
 
 const store = createStore(rootReducer);
 
